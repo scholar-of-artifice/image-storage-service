@@ -1,6 +1,10 @@
-def main():
-    print("Hello from image-storage-service!")
+from fastapi import FastAPI
+
+app = FastAPI()
 
 
-if __name__ == "__main__":
-    main()
+@app.get("/")
+def root():
+    print("root => ")
+    message = "Hello from image-storage-service!"
+    return {"message": message}
